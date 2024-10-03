@@ -16,7 +16,9 @@ const App: React.FC = () => {
   return (
     <div className="App">
       {isLoggedIn ? (
-        <h1>Welcome, {name}! You have successfully logged in.</h1>
+		<div>
+		<img src="fbi.png"/>
+		</div>
       ) : (
         <form onSubmit={handleSubmit}>
           <h1>Login</h1>
