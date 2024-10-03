@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 const App: React.FC = () => {
@@ -13,11 +13,19 @@ const App: React.FC = () => {
     }
   };
 
+  useEffect(() => {
+	if (password.length > 3) {
+		setIsLoggedIn(true);	
+	}
+  }, [password]);
+
   return (
     <div className="App">
       {isLoggedIn ? (
-		<div>
+		<div style = {{position: "absolute", width: "100%", height: "100%", backgroundColor: "black", display: "flex", justifyContent: "center", alignItems: "center"}}>
+		<div style = {{backgroundColor: "black", width: "80%", display: "flex", justifyContent: "center", alignItems: "center"}}>
 		<img src="fbi.png"/>
+		</div>
 		</div>
       ) : (
         <form onSubmit={handleSubmit}>
